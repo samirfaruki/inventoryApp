@@ -6,6 +6,7 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const catalogRouter = require("./routes/catalog");
 var app = express();
 // const birds = require();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/catalog", catalogRouter);
 
 // ...
 
