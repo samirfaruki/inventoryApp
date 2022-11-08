@@ -6,8 +6,12 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-
 var app = express();
+// const birds = require();
+
+// import bird from './routes/bird'
+const birds = require("./routes/bird");
+
 // Set up mongoose connection
 
 const mongoDB =
@@ -28,6 +32,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
+// ...
+
+app.use("/birds", birds);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
